@@ -9,7 +9,7 @@ from kitchen.views import (
 
 urlpatterns = [
     path("", index, name="index"),
-    path("dish-type/", DishTypeListView.as_view(), name="dish-type-list"),
+    path("dish-types/", DishTypeListView.as_view(), name="dish-type-list"),
 
     path("dish/", DishListView.as_view(), name="dish-list"),
 

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Menu</h1>
+  {% if dish_list %}
+    <table class="table">
+      <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>description</th>
+        <th>price</th>
+        <th>cook</th>
+      </tr>
+
+      {% for dish in dish_list %}
+
+        <td>{{ dish.name }}</td>
+        <td>{{ dish.price }}</td>
+
+      {% endfor %}
+    </table>
+  {% endif %}
+{% endblock %}

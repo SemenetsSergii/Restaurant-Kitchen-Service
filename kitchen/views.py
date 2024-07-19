@@ -35,7 +35,7 @@ class DishTypeListView(LoginRequiredMixin, generic.ListView):
 
 class DishListView(LoginRequiredMixin, generic.ListView):
     model = Dish
-    queryset = Dish.objects.select_related("dish_types")
+    queryset = Dish.objects.select_related("dish_type")
     template_name = "kitchen/dish_list.html"
     context_object_name = "dish_list"
 
