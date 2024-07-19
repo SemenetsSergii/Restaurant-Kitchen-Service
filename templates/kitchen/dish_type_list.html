@@ -1,33 +1,37 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>Dish Type list</h1>
-  <h2> Create new Dish Type: <a href="{% url 'kitchen:dish-type-create' %}"
-                                class="btn btn-primary link-to-page">
-    Create</a></h2>
+  <h1>Dish Type List</h1>
+  {% if user.is_staff %}
+    <h2>Create new Dish Type: <a href="{% url 'kitchen:dish-type-create' %}"
+                                 class="btn btn-primary link-to-page">Create</a></h2>
+  {% endif %}
   {% if dish_type_list %}
-    <table class=" table">
+    <table class="table">
       <tr>
-        <th>id</th>
-        <th>name</th>
+        <th>ID</th>
+        <th>Name</th>
+        {% if user.is_staff %}
+          <th>Update</th>
+        {% endif %}
+        {% if user.is_staff %}
+          <th>Delete</th>
+        {% endif %}
       </tr>
-
-
-
       {% for dish_type in dish_type_list %}
         <tr>
-          <td>
-            {{ dish_type.id }}
-          </td>
-          <td>
-            {{ dish_type.name }}
-          </td>
+          <td>{{ dish_type.id }}</td>
+          <td>{{ dish_type.name }}</td>
+          {% if user.is_staff %}
+            <td><a href="{% url 'kitchen:dish-type-update' pk=dish_type.id %}">Update</a></td>
+          {% endif %}
+          {% if user.is_staff %}
+            <td><a href="{% url 'kitchen:dish-type-delete' pk=dish_type.id %}">Delete</a></td>
+          {% endif %}
         </tr>
-
       {% endfor %}
     </table>
+  {% else %}
+    <p>No dish types available.</p>
   {% endif %}
-
 {% endblock %}
-
-

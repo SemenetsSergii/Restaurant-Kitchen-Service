@@ -5,7 +5,7 @@
     <ul>
       {% for cook in cook_list %}
         <li>
-          <a href="{{ cook.get_absolute_url }}">{{ cook.first_name }} {{ cook.last_name }} {% if user == driver %} (Me){% endif %}</a>
+          <a href="{{ cook.get_absolute_url }}">{{ cook.first_name }} {{ cook.last_name }} {% if user == cook %} (Me){% endif %}</a>
 
         </li>
       {% endfor %}

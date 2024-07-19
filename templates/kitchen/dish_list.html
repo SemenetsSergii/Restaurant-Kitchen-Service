@@ -3,8 +3,10 @@
 
 {% block content %}
   <h1>Menu</h1>
-  <h2>Create new Dish: <a href="{% url 'kitchen:dish-create' %}" class="btn btn-primary link-to-page">
-    Create</a></h2>
+  {% if user.is_staff %}
+    <h2>Create new Dish: <a href="{% url 'kitchen:dish-create' %}" class="btn btn-primary link-to-page">
+      Create</a></h2>
+  {% endif %}
   {% if dish_list %}
     <table class="table">
       <tr>
@@ -12,15 +14,26 @@
         <th>name</th>
         <th>description</th>
         <th>price</th>
-        <th>cook</th>
+        {% if user.is_staff %}
+          <th>Update</th>
+        {% endif %}
+        {% if user.is_staff %}
+          <th>Delete</th>
+        {% endif %}
       </tr>
 
       {% for dish in dish_list %}
         <tr>
-        <td>{{ dish.id }}</td>
-        <td>{{ dish.name }}</td>
-        <td>{{ dish.description }}</td>
-        <td>{{ dish.price }}</td>        
+          <td>{{ dish.id }}</td>
+          <td>{{ dish.name }}</td>
+          <td>{{ dish.description }}</td>
+          <td>{{ dish.price }}</td>
+          {% if user.is_staff %}
+            <td><a href="{% url 'kitchen:dish-update' pk=dish.id %}">Update</a></td>
+          {% endif %}
+          {% if user.is_staff %}
+            <td><a href="{% url 'kitchen:dish-delete' pk=dish.id %}">Delete</a></td>
+          {% endif %}
         </tr>
 
 
