@@ -130,3 +130,9 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'kitchen.Cook'
+
+LOGIN_REDIRECT_URL = "/kitchen/"
+
+INTERNAL_IPS = [
+    "127.0.0.1"
+]

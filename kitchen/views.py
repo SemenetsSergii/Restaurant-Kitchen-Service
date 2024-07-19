@@ -11,6 +11,7 @@ from .models import (
 )
 
 
+@login_required
 def index(request: HttpRequest) -> HttpResponse:
     num_dish = Dish.objects.count()
     num_cook = Cook.objects.count()
