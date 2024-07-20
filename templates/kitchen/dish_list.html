@@ -11,10 +11,11 @@
     <table class="table">
       <tr>
         {% if user.is_staff %}
-        <th>id</th>
+          <th>id</th>
         {% endif %}
         <th>name</th>
         <th>description</th>
+      <th>dish type</th>
         <th>price</th>
         {% if user.is_staff %}
           <th>Update</th>
@@ -26,11 +27,14 @@
 
       {% for dish in dish_list %}
         <tr>
-               {% if user.is_staff %}
-          <td>{{ dish.id }}</td>
-                    {% endif %}
-          <td>{{ dish.name }}</td>
+          {% if user.is_staff %}
+            <td>{{ dish.id }}</td>
+          {% endif %}
+        <td>
+          <a href="{% url "kitchen:dish-detail" pk=dish.id %} ">{{ dish.name }}</a>
+        </td>
           <td>{{ dish.description }}</td>
+        <td>{{ dish.dish_type.name }}</td>
           <td>{{ dish.price }}</td>
           {% if user.is_staff %}
             <td><a href="{% url 'kitchen:dish-update' pk=dish.id %}">Update</a></td>
@@ -39,9 +43,6 @@
             <td><a href="{% url 'kitchen:dish-delete' pk=dish.id %}">Delete</a></td>
           {% endif %}
         </tr>
-
-
-
       {% endfor %}
     </table>
   {% endif %}

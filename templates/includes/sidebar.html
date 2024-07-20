@@ -1,6 +1,5 @@
-{% load static %}
 <ul class="nav justify-content-center">
-<h1 class="custom-text" style="color: green">First Secret Restaurant</h1>  
+  <h1 class="custom-text">First Secret Restaurant</h1>
 </ul>
 <ul class="nav justify-content-center">
   <li class="nav-item">
@@ -15,7 +14,7 @@
   <li class="nav-item">
     <a class="nav-link" href="{% url 'kitchen:dish-list' %}">Our menu</a>
   </li>
-    {% if user.is_authenticated %}
+  {% if user.is_authenticated %}
     <li class="nav-item">
       <a class="nav-link" href="{{ user.get_absolute_url }}">User: {{ user.get_username }}</a>
     </li>
@@ -28,3 +27,4 @@
     </li>
   {% endif %}
 </ul>
+

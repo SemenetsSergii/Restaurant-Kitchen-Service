@@ -10,27 +10,29 @@
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
         crossorigin="anonymous">
   {% load static %}
-  <link rel="stylesheet" href="{% static "css/styles.css" %}">
+  <link rel="stylesheet" href="{% static 'scc/style.css' %}">
 </head>
-<link rel="stylesheet" href="{% static "css/styles.css" %}">
+<link rel="stylesheet" href="{% static 'scc/style.css' %}">
 <h1 class="custom-text"></h1>
 <p class="custom-text"></p>
 <body>
 <div class="nav justify-content-center">
-    <div class="col-sm-12">
 
-      {% block sidebar %}
-        {% include "includes/sidebar.html" %}
-      {% endblock %}
-
-    </div>
-    <div class="col-sm-25">
-
-      {% block content %}
-      {% endblock %}
-
-    </div>
+  <div class="col-sm-12">
+<header>
+    {% block sidebar %}
+      {% include "includes/sidebar.html" %}
+    {% endblock %}
+</header>
   </div>
+
+  <div class="col-sm-25">
+
+    {% block content %}
+    {% endblock %}
+
+  </div>
+</div>
 </div>
 </body>
 

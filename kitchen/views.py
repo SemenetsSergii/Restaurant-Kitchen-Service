@@ -65,6 +65,18 @@ class DishTypeDeleteView(LoginRequiredMixin, generic.DeleteView):
         return super().dispatch(request, *args, **kwargs)
 
 
+class DishTypeDetailView(LoginRequiredMixin, generic.DetailView):
+    model = DishType
+    template_name = "kitchen/dish_type_detail.html"
+    context_object_name = "dish_type"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        dish_list = Dish.objects.filter(dish_type=self.object)
+        context['dish_list'] = dish_list
+        return context
+
+
 class DishListView(LoginRequiredMixin, generic.ListView):
     model = Dish
     queryset = Dish.objects.select_related("dish_type")
@@ -102,8 +114,24 @@ class DishDeleteView(LoginRequiredMixin, generic.DeleteView):
         return super().dispatch(request, *args, **kwargs)
 
 
+class DishDetailView(LoginRequiredMixin, generic.DetailView):
+    model = Dish
+    template_name = "kitchen/dish_detail.html"
+    context_object_name = "dish"
+
+    def get_queryset(self):
+        return super().get_queryset().select_related('dish_type').prefetch_related('cooks')
+
+
+
 class CookListView(LoginRequiredMixin, generic.ListView):
     model = Cook
     queryset = Cook.objects.prefetch_related("dishes")
     template_name = "kitchen/cook_list.html"
+
+
+
+class CookDetailView(LoginRequiredMixin, generic.DetailView):
+    model = Cook
+    queryset = Cook.objects.prefetch_related("dishes__dish_type")
 

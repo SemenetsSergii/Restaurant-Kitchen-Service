@@ -1,14 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
-  <h1>Cook's list</h1>
+  <h1>Staff Cooks</h1>
   {% if cook_list %}
     <ul>
       {% for cook in cook_list %}
         <li>
-          <a href="{{ cook.get_absolute_url }}">{{ cook.first_name }} {{ cook.last_name }} {% if user == cook %} (Me){% endif %}</a>
-
+          <a href="{{ cook.get_absolute_url }}">{{ cook.first_name }} {{ cook.last_name }}
+            {% if user == cook.user %} (Me) {% endif %}
+          </a>
         </li>
       {% endfor %}
     </ul>
+  {% else %}
+    <p>No staff cooks available.</p>
   {% endif %}
 {% endblock %}

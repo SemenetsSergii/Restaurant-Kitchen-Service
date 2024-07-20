@@ -1,12 +1,36 @@
-body {
-    margin-top: 20px;
-
+header {
+    background-image: url('../images/rest1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px 0;
 }
 
-body {
-    background-image: url("../images/rest1.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
+.custom-text {
+    color: black;
+    font-family: "Freestyle Script", serif;
+    font-weight: bolder;
+    font-size: calc(1em + 4vw);
+}
+
+ul.nav {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.nav-item {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.nav-link {
+    color: black;
+    font-family: "Freestyle Script", serif;
+    font-size: calc(0.5em + 2vw);
+}
+
+.nav-link:hover {
+    color: #666;
 }

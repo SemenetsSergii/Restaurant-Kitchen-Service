@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>
+    Dish type: {{ dish_type.name }}
+  </h1>
+  <div class="ml-3">
+    <h3>Dishes:</h3>
+
+    {% if dish_list %}
+      <table class="table">
+        <tr>
+          <th>Name</th>
+        </tr>
+
+        {% for dish in dish_list %}
+          <tr>
+            <td><a href="{{ dish.get_absolute_url }}">{{ dish.name }}</a></td>
+          </tr>
+        {% endfor %}
+      </table>
+    {% else %}
+      <p>No dishes available for this category.</p>
+    {% endif %}
+  </div>
+{% endblock %}
