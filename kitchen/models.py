@@ -17,7 +17,6 @@ class DishType(models.Model):
 class Cook(AbstractUser):
     years_of_experience = models.IntegerField(null=True, blank=True)
 
-
     class Meta:
         verbose_name = "cook"
         verbose_name_plural = "cooks"
@@ -37,7 +36,7 @@ class Dish(models.Model):
     cooks = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="dishes")
 
     class Meta:
-        ordering = ['name']
+        ordering = ['dish_type']
         verbose_name = "dish"
         verbose_name_plural = "dishes"
 

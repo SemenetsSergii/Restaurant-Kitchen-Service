@@ -2,21 +2,21 @@
 {% load crispy_forms_filters %}
 
 {% block content %}
-  <h1>Menu</h1>
+  <h1 class="header-menu">Menu</h1>
   {% if user.is_staff %}
     <h2>Create new Dish: <a href="{% url 'kitchen:dish-create' %}" class="btn btn-primary link-to-page">
       Create</a></h2>
   {% endif %}
   {% if dish_list %}
-    <table class="table">
+    <table class="table-container">
       <tr>
         {% if user.is_staff %}
           <th>id</th>
         {% endif %}
-        <th>name</th>
-        <th>description</th>
-      <th>dish type</th>
-        <th>price</th>
+        <th style="width: 10%">Dish</th>
+        <th style="width: 60%">Description</th>
+      <th style="width: 15%">Dish type</th>
+        <th style="width: 15%">Price</th>
         {% if user.is_staff %}
           <th>Update</th>
         {% endif %}
@@ -26,7 +26,7 @@
       </tr>
 
       {% for dish in dish_list %}
-        <tr>
+        <tr class="tab-bottom">
           {% if user.is_staff %}
             <td>{{ dish.id }}</td>
           {% endif %}
@@ -40,7 +40,7 @@
             <td><a href="{% url 'kitchen:dish-update' pk=dish.id %}">Update</a></td>
           {% endif %}
           {% if user.is_staff %}
-            <td><a href="{% url 'kitchen:dish-delete' pk=dish.id %}">Delete</a></td>
+            <td><a style="color: red" href="{% url 'kitchen:dish-delete' pk=dish.id %}">Delete</a></td>
           {% endif %}
         </tr>
       {% endfor %}

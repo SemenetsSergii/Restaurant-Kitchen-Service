@@ -7,7 +7,7 @@
   <p><strong>Years of experience:</strong> {{ cook.years_of_experience }}</p>
 
   <div class="ml-3">
-    <h4>Master is prepared:</h4>
+    <h4>Сooking master:</h4>
     {% for dish in cook.dishes.all %}
       <li>{{ dish.dish_type.name }}</li>
     {% empty %}
