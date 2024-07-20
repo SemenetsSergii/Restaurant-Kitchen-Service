@@ -70,6 +70,7 @@ class DishTypeDetailView(LoginRequiredMixin, generic.DetailView):
     template_name = "kitchen/dish_type_detail.html"
     context_object_name = "dish_type"
 
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         dish_list = Dish.objects.filter(dish_type=self.object)
