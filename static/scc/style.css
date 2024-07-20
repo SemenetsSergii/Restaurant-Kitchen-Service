@@ -1,3 +1,12 @@
 body {
-    background-color: white;
+    margin-top: 20px;
+
+}
+
+body {
+    background-image: url("../images/rest1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
 }

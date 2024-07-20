@@ -1,13 +1,30 @@
-<ul class="sidebar-nav">
-  {% if user.is_authenticated %}
-    <li class="list-group-item">User: <a href="{{ user.get_absolute_url }}">{{ user.get_username }}</a></li>
-    <li class="list-group-item"><a href="{% url 'logout' %}?next={{ request.path }}">Logout</a></li>
+{% load static %}
+<ul class="nav justify-content-center">
+<h1 class="custom-text" style="color: green">First Secret Restaurant</h1>  
+</ul>
+<ul class="nav justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'kitchen:index' %}">About us</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'kitchen:cook-list' %}">Our Cook's</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'kitchen:dish-type-list' %}">Our Dish Type</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'kitchen:dish-list' %}">Our menu</a>
+  </li>
+    {% if user.is_authenticated %}
+    <li class="nav-item">
+      <a class="nav-link" href="{{ user.get_absolute_url }}">User: {{ user.get_username }}</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'logout' %}?next={{ request.path }}">Logout</a>
+    </li>
   {% else %}
-    <li class="list-group-item"><a href="{% url 'login' %}?next={{ request.path }}">Login</a></li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'login' %}?next={{ request.path }}">Login</a>
+    </li>
   {% endif %}
-  <br>
-  <li><a href="{% url 'kitchen:index' %}">About us</a></li>
-  <li><a href="{% url 'kitchen:cook-list' %}">Our Cook's</a></li>
-  <li><a href="{% url "kitchen:dish-type-list" %}">Our Dish Type</a></li>
-  <li><a href="{% url "kitchen:dish-list" %}">Our menu</a></li>
 </ul>

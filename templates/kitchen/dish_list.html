@@ -10,7 +10,9 @@
   {% if dish_list %}
     <table class="table">
       <tr>
+        {% if user.is_staff %}
         <th>id</th>
+        {% endif %}
         <th>name</th>
         <th>description</th>
         <th>price</th>
@@ -24,7 +26,9 @@
 
       {% for dish in dish_list %}
         <tr>
+               {% if user.is_staff %}
           <td>{{ dish.id }}</td>
+                    {% endif %}
           <td>{{ dish.name }}</td>
           <td>{{ dish.description }}</td>
           <td>{{ dish.price }}</td>

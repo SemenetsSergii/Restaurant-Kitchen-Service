@@ -9,7 +9,9 @@
   {% if dish_type_list %}
     <table class="table">
       <tr>
-        <th>ID</th>
+        {% if user.is_staff %}
+          <th>id</th>
+        {% endif %}
         <th>Name</th>
         {% if user.is_staff %}
           <th>Update</th>
@@ -20,7 +22,9 @@
       </tr>
       {% for dish_type in dish_type_list %}
         <tr>
-          <td>{{ dish_type.id }}</td>
+          {% if user.is_staff %}
+            <td>{{ dish_type.id }}</td>
+          {% endif %}
           <td>{{ dish_type.name }}</td>
           {% if user.is_staff %}
             <td><a href="{% url 'kitchen:dish-type-update' pk=dish_type.id %}">Update</a></td>

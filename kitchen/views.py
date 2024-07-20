@@ -23,7 +23,7 @@ def index(request: HttpRequest) -> HttpResponse:
     context = {
         'num_dish': num_dish,
         'num_cook': num_cook,
-        "num_Dish_type": num_dish_type,
+        "num_dish_type": num_dish_type,
         "num_visits": num_visits,
     }
     return render(request, "kitchen/index.html", context=context)
