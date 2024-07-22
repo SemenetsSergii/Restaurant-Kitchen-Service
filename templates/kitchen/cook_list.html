@@ -1,22 +1,25 @@
 {% extends "base.html" %}
 {% block content %}
-  <h1>Staff Cooks
+  <h1 class="header-menu">Staff Cooks
     {% if user.is_superuser %}
-      <h2>Create new Cook: <a href="{% url 'kitchen:cook-create' %}" class="btn btn-primary link-to-page">
-        Create</a></h2>
+      <h2 class="header-create">Create new Cook: <a href="{% url 'kitchen:cook-create' %}" class="btn btn-primary link-to-page">
+        Create</a>
+      </h2>
     {% endif %}
   </h1>
+  <div class="cook-list">
   {% if cook_list %}
     <ul>
       {% for cook in cook_list %}
-        <p>
+        <p class="table-dish-centre">
           <a href="{{ cook.get_absolute_url }}">{{ cook.first_name }} {{ cook.last_name }}
             {% if user == cook.user %} (Me) {% endif %}
           </a>
-        </p>
+        </ptable-dish-centre>
       {% endfor %}
     </ul>
   {% else %}
     <p>No staff cooks available.</p>
   {% endif %}
+  </div>
 {% endblock %}

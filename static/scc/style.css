@@ -1,3 +1,8 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
 header {
     background-image: url('../images/rest1.jpg');
     background-size: cover;
@@ -35,9 +40,10 @@ ul.nav {
     color: #666;
 }
 
-.table-container {
+
+.table-dish {
     width: 90%;
-    margin: 0 auto;
+    margin: 1em;
     border-collapse: collapse;
     border-spacing: 2px 5px;
     line-height: 2.5;
@@ -46,7 +52,6 @@ ul.nav {
     font-weight: normal;
     color: black;
     padding: 12px 2px;
-
 
 }
 
@@ -58,7 +63,51 @@ ul.nav {
     text-align: center;
 }
 
-.tab-bottom {
+.tab-bottom-dish {
     border-top: dashed black;
 
+}
+
+.name-line {
+    font-family: "Monotype Corsiva", serif;
+}
+
+.header-create {
+    margin: 1em;
+    padding: 15px 10px;
+    color: black;
+    font-family: "Monotype Corsiva", serif;
+    font-weight: bolder;
+    font-size: calc(1em + 1vw);
+    text-align: left;
+}
+
+.cook-list {
+    margin: 1em;
+    border-collapse: collapse;
+    border-spacing: 2px 5px;
+    line-height: 2.5;
+    font-family: "Monotype Corsiva", serif;
+    font-size: calc(1em + 0.5vw);
+    font-weight: normal;
+    color: black;
+    padding: 12px 2px;
+    text-align: center;
+}
+
+
+.table-dish-centre {
+    text-align: center;
+    margin: auto;
+    font-family: "Monotype Corsiva", serif;
+    font-size: calc(1em + 1vw);
+}
+
+
+pagination {
+    text-align: center;
+    margin: auto;
+    font-family: "Monotype Corsiva", serif;
+    font-size: calc(1em + 1vw);
+    border-radius: 30px;
 }

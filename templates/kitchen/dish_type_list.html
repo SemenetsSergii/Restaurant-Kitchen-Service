@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>Dish Type List</h1>
+  <h1 class="header-menu">Dish Type List</h1>
   {% if user.is_staff %}
-    <h2>Create new Dish Type: <a href="{% url 'kitchen:dish-type-create' %}"
+    <h2 class=" header-create">Create new Dish Type: <a href="{% url 'kitchen:dish-type-create' %}"
                                  class="btn btn-primary link-to-page">Create</a></h2>
   {% endif %}
   {% if dish_type_list %}
-    <table class="table">
+    <table class="table-dish-centre">
       <tr>
         {% if user.is_staff %}
           <th>id</th>
@@ -23,7 +23,7 @@
         {% endif %}
       </tr>
       {% for dish_type in dish_type_list %}
-        <tr>
+        <tr class="tab-bottom">
           {% if user.is_staff %}
             <td>{{ dish_type.id }}</td>
           {% endif %}

@@ -1,14 +1,13 @@
 {% extends "base.html" %}
-{% load crispy_forms_filters %}
 
 {% block content %}
   <h1 class="header-menu">Menu</h1>
   {% if user.is_staff %}
-    <h2>Create new Dish: <a href="{% url 'kitchen:dish-create' %}" class="btn btn-primary link-to-page">
+    <h2 class="header-create">Create new Dish: <a href="{% url 'kitchen:dish-create' %}" class="btn btn-primary link-to-page">
       Create</a></h2>
   {% endif %}
   {% if dish_list %}
-    <table class="table-container">
+    <table class="table-dish">
       <tr>
         {% if user.is_staff %}
           <th>id</th>
@@ -26,7 +25,7 @@
       </tr>
 
       {% for dish in dish_list %}
-        <tr class="tab-bottom">
+        <tr class="tab-bottom-dish">
           {% if user.is_staff %}
             <td>{{ dish.id }}</td>
           {% endif %}
