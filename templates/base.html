@@ -19,26 +19,25 @@
 <div class="nav">
 
   <div class="col-sm-12">
-<header>
-    {% block sidebar %}
-      {% include "includes/sidebar.html" %}
-    {% endblock %}
-</header>
-  </div>
-
-  <div class="col-sm-12">
-
-    {% block content %}
-    {% endblock %}
-      {% block pagination %}
-        {% include "includes/pagination.html" %}
+    <header>
+      {% block sidebar %}
+        {% include "includes/sidebar.html" %}
       {% endblock %}
+    </header>
   </div>
 </div>
+<div>
+  {% block content %}
+  {% endblock %}
+</div>
+<div>
+  {% block pagination %}
+    {% include "includes/pagination.html" %}
+  {% endblock %}
 </div>
 </body>
-    <footer>
-        &copy; 2024 My Site
-    </footer>
+<footer>
+  &copy; 2024 My Site
+</footer>
 </html>
 

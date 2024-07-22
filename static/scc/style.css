@@ -1,6 +1,8 @@
 body {
-    margin: 0;
-    padding: 0;
+    margin: 20px;
+    padding: 10px;
+    font-family: "Monotype Corsiva", serif;
+
 }
 
 header {
@@ -9,6 +11,30 @@ header {
     background-position: center;
     background-repeat: no-repeat;
     padding: 20px 0;
+}
+
+.header2 {
+    font-size: 1em;
+    color: black;
+    font-family: "Monotype Corsiva", serif;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.view {
+    color: black;
+    font-family: "Monotype Corsiva", serif;
+    font-weight: bolder;
+    font-size: calc(1em + 4vw);
+    text-align: center;
+}
+
+.view-about {
+    color: black;
+    font-family: "Monotype Corsiva", serif;
+    font-weight: bolder;
+    font-size: 2em;
+    text-align: center;
 }
 
 .custom-text {
@@ -56,7 +82,7 @@ ul.nav {
 }
 
 .header-menu {
-    color: black;
+    color: white;
     font-family: "Monotype Corsiva", serif;
     font-weight: bolder;
     font-size: calc(1em + 4vw);
@@ -75,7 +101,7 @@ ul.nav {
 .header-create {
     margin: 1em;
     padding: 15px 10px;
-    color: black;
+    color: white;
     font-family: "Monotype Corsiva", serif;
     font-weight: bolder;
     font-size: calc(1em + 1vw);
@@ -95,25 +121,45 @@ ul.nav {
     text-align: center;
 }
 
+.table-cook-centre {
+    width: 10%;
+    text-align: center;
+    margin: auto;
+    font-family: "Monotype Corsiva", serif;
+    font-size: 2rem;
+    table-layout: fixed;
+    width: 90%;
+    border-collapse: collapse;
+    border: 0px;
+}
+
+.table-dish-type-centre {
+    width: 10%;
+    text-align: center;
+    margin: auto;
+    font-family: "Monotype Corsiva", serif;
+    font-size: 2rem;
+    table-layout: fixed;
+    width: 90%;
+    border-collapse: collapse;
+    border: 0px;
+}
 
 .table-dish-centre {
+    width: 10%;
     text-align: center;
     margin: auto;
     font-family: "Monotype Corsiva", serif;
-    font-size: calc(1em + 1vw);
+    font-size: 2rem;
+    table-layout: fixed;
+    width: 90%;
+    border-collapse: collapse;
+    border: 0px;
 }
 
-
-pagination {
-    text-align: center;
-    margin: auto;
-    font-family: "Monotype Corsiva", serif;
-    font-size: calc(1em + 1vw);
-    border-radius: 30px;
-}
 
 .search-form-container {
-    margin: auto 0px;
+    margin: ;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -124,8 +170,58 @@ pagination {
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .search-form-container input[type="submit"] {
     margin-left: 10px;
+}
+
+.pagination {
+    display: flex; /* Use flexbox to align items */
+    justify-content: center; /* Center the pagination items */
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove padding */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.page-item {
+    margin: 0 5px; /* Add some space between pagination items */
+}
+
+.page-link {
+    text-decoration: none; /* Remove underline from links */
+    padding: 8px 12px; /* Add padding to links */
+    border: 1px solid #0c7cd1; /* Add border */
+    color: #007bff; /* Set link color */
+    border-radius: 4px; /* Add rounded corners */
+}
+
+.page-item.active .page-link {
+    background-color: #007bff; /* Active page color */
+    color: white; /* Text color for active page */
+}
+
+.page-link:hover {
+    background-color: #e9ecef; /* Hover effect */
+}
+
+.footer {
+    margin-left: auto;
+    margin-right: auto;
+   color: white;
+}
+
+.cook-link {
+    font-size: 1.9rem;
+    color: #238fe8;
+}
+
+.btn-primary {
+    color: #000000;
+    background-color: #ecc70f;
+    border-color: #0280e6;
+    font-size: 25px;
 }
