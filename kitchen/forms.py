@@ -37,3 +37,42 @@ def validation_year_of_experience(years_of_experience: int) -> int:
     elif years_of_experience < 0:
         raise ValidationError("The length of service should not be less than 0")
     return years_of_experience
+
+
+class CookSearchForm(forms.Form):
+    username = forms.CharField(
+        max_length=255,
+        required=False,
+        label="",
+        widget=forms.TextInput(
+            attrs={
+                "placeholder": "Search by Cook"
+            }
+        )
+    )
+
+
+class DishSearchForm(forms.Form):
+    name = forms.CharField(
+        max_length=255,
+        required=False,
+        label="",
+        widget=forms.TextInput(
+            attrs={
+                "placeholder": "Search by Dish"
+            }
+        )
+    )
+
+
+class DishTypeSearchForm(forms.Form):
+    name = forms.CharField(
+        max_length=255,
+        required=False,
+        label="",
+        widget=forms.TextInput(
+            attrs={
+                "placeholder": "Search by Dish Type"
+            }
+        )
+    )

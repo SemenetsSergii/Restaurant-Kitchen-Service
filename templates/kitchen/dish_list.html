@@ -1,11 +1,20 @@
 {% extends "base.html" %}
+{% load crispy_forms_filters %}
 
 {% block content %}
   <h1 class="header-menu">Menu</h1>
+  <div class="search-form-container">
+    <form method="get" action="" class="form-inline">
+      {{ search_form|crispy }}
+      <input type="submit" class="btn btn-secondary" value="🔍">
+    </form>
+  </div>
   {% if user.is_staff %}
-    <h2 class="header-create">Create new Dish: <a href="{% url 'kitchen:dish-create' %}" class="btn btn-primary link-to-page">
+    <h2 class="header-create">Create new Dish: <a href="{% url 'kitchen:dish-create' %}"
+                                                  class="btn btn-primary link-to-page">
       Create</a></h2>
   {% endif %}
+
   {% if dish_list %}
     <table class="table-dish">
       <tr>
