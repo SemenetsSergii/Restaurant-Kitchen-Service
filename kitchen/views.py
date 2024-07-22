@@ -11,6 +11,7 @@ from .models import (
     Dish,
     DishType
 )
+from .forms import CookCreateForm
 
 
 @login_required
@@ -135,4 +136,9 @@ class CookListView(LoginRequiredMixin, generic.ListView):
 class CookDetailView(LoginRequiredMixin, generic.DetailView):
     model = Cook
     queryset = Cook.objects.prefetch_related("dishes__dish_type")
+
+
+class CookCreateView(LoginRequiredMixin, generic.CreateView):
+    model = Cook
+    form_class = CookCreateForm
 

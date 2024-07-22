@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
-  <h1>Staff Cooks</h1>
+  <h1>Staff Cooks
+    {% if user.is_superuser %}
+      <h2>Create new Cook: <a href="{% url 'kitchen:cook-create' %}" class="btn btn-primary link-to-page">
+        Create</a></h2>
+    {% endif %}
+  </h1>
   {% if cook_list %}
     <ul>
       {% for cook in cook_list %}
