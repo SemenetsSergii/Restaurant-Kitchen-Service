@@ -60,6 +60,7 @@ class DishTypeListView(LoginRequiredMixin, generic.ListView):
             )
         return queryset
 
+
 class DishTypeCreateView(LoginRequiredMixin, generic.edit.CreateView):
     model = DishType
     fields = "__all__"
@@ -164,7 +165,11 @@ class DishDetailView(LoginRequiredMixin, generic.DetailView):
     context_object_name = "dish"
 
     def get_queryset(self):
-        return super().get_queryset().select_related('dish_type').prefetch_related('cooks')
+        return super().get_queryset().select_related(
+            'dish_type'
+        ).prefetch_related(
+            'cooks'
+        )
 
 
 class CookListView(LoginRequiredMixin, generic.ListView):
@@ -219,4 +224,3 @@ class CookUpdateView(LoginRequiredMixin, generic.UpdateView):
     form_class = CookYearUpdateForm
     success_url = reverse_lazy("kitchen:cook-list")
     template_name = "kitchen/cook_form.html"
-

@@ -58,8 +58,14 @@ class PrivateCookListViewTest(TestCase):
             password="userpass123",
         )
         self.client.force_login(self.user)
-        self.cook1 = get_user_model().objects.create_user(username="Michael", password="password1")
-        self.cook2 = get_user_model().objects.create_user(username="Kimmi", password="password2")
+        self.cook1 = get_user_model().objects.create_user(
+            username="Michael",
+            password="password1"
+        )
+        self.cook2 = get_user_model().objects.create_user(
+            username="Kimmi",
+            password="password2"
+        )
 
     def test_retrieve_cooks(self):
         response = self.client.get(COOK_LIST_URL)

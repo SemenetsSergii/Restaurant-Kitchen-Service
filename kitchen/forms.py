@@ -33,9 +33,13 @@ class CookYearUpdateForm(forms.ModelForm):
 
 def validation_year_of_experience(years_of_experience: int) -> int:
     if years_of_experience > 99:
-        raise ValidationError("The length of service should not be greater than 99 years")
+        raise ValidationError(
+            "The length of service should not be greater than 99 years"
+        )
     elif years_of_experience < 0:
-        raise ValidationError("The length of service should not be less than 0")
+        raise ValidationError(
+            "The length of service should not be less than 0"
+        )
     return years_of_experience
 
 
