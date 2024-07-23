@@ -76,7 +76,7 @@
       "username": "cook1",
       "first_name": "John",
       "last_name": "Doe",
-      "password": "password",
+      "password": "pbkdf2_sha256$390000$UdQB29iebZPuoInz4cjz8y$zpISFh/6/Hh/yAfULQoG/A/McBgNk8HZKqRCL4S2lO0=",
       "years_of_experience": 5,
       "is_staff": true
     }
@@ -88,7 +88,7 @@
       "username": "cook2",
       "first_name": "Jane",
       "last_name": "Smith",
-      "password": "password",
+      "password": "pbkdf2_sha256$390000$4kTTtSN8a0RcsOmQi9u1oM$kK5EIFlrJrmjeW8/3P5129jthhuaPiZ9RPOz5VTWfno=",
       "years_of_experience": 7,
       "is_staff": true
     }
@@ -100,7 +100,7 @@
       "username": "cook3",
       "first_name": "Alice",
       "last_name": "Johnson",
-      "password": "password",
+      "password": "pbkdf2_sha256$390000$0YCmq4epqPtjPV5WLwjPv7$sbg6Iu28SHLojKL7zuT4w8SwRqZVwoxn9yLrM8nVEmc=",
       "years_of_experience": 3,
       "is_staff": true
     }
@@ -112,7 +112,7 @@
       "username": "cook4",
       "first_name": "Bob",
       "last_name": "Brown",
-      "password": "password",
+      "password": "pbkdf2_sha256$390000$F02brgFS5VUCo0yoXaI62D$Q+L3qs6SQA+7g77hefwLqCHCWVX67+TH7HBs8a81Jok=",
       "years_of_experience": 10,
       "is_staff": true
     }
@@ -124,7 +124,7 @@
       "username": "cook5",
       "first_name": "Eve",
       "last_name": "Davis",
-      "password": "password",
+      "password": "pbkdf2_sha256$390000$i4CvIdjEUqcwIQ2t6q1VLc$t+z8GoNupR9kdYv9pT9+GzyJSEttNJHmbqJkgwHTAPs=",
       "years_of_experience": 6,
       "is_staff": true
     }
@@ -136,7 +136,7 @@
       "username": "cook6",
       "first_name": "Charlie",
       "last_name": "Wilson",
-      "password": "password",
+      "password": "pbkdf2_sha256$390000$g8yK1VUWxjG0eKj2QgPQA5$apxJJIPpLmLw9iI32mrNt1oEJgTVCKz2lQaTnUXn5oY=",
       "years_of_experience": 8,
       "is_staff": true
     }
@@ -148,7 +148,7 @@
       "username": "cook7",
       "first_name": "Diana",
       "last_name": "Clark",
-      "password": "password",
+      "password": "pbkdf2_sha256$390000$hEGHcqoffmueDFiWxcwCsc$saSLgOsYs7QoEyObUBIrOj1ayqIIPiMKTwUJNk+1Fnw=",
       "years_of_experience": 4,
       "is_staff": true
     }
@@ -160,7 +160,7 @@
       "username": "NotStaff",
       "first_name": "Ethan",
       "last_name": "Taylor",
-      "password": "password",
+      "password": "pbkdf2_sha256$390000$T1oddcCO9zxNB064RUFouW$kjVSGfU5xl/Ak6wjoZs0iEckmNiNjPVobyXSqI63r0I=",
       "years_of_experience": 2,
       "is_staff": false
     }
@@ -172,7 +172,7 @@
       "username": "IsStaff",
       "first_name": "Grace",
       "last_name": "Miller",
-      "password": "password",
+      "password": "pbkdf2_sha256$390000$NsmNv3UX17eQf027CtUKzR$o0AyHkzLltPVleUQja3MNY7oe9aoatziujqhbwK0pBc=",
       "years_of_experience": 9,
       "is_staff": true
     }
@@ -184,7 +184,7 @@
       "username": "cook10",
       "first_name": "Frank",
       "last_name": "Anderson",
-      "password": "password",
+      "password": "pbkdf2_sha256$390000$QNRGIMvMss4Lu31xLViMoz$UowoO/vHIanGDh43SLmZ0Erc81Ng7jMtm7dWkAGM0yE=",
       "years_of_experience": 1,
       "is_staff": true
     }
@@ -196,7 +196,7 @@
       "username": "SuperUser",
       "first_name": "Frank",
       "last_name": "Anderson",
-      "password": "test123456",
+      "password": "pbkdf2_sha256$390000$okqpvh552riMEVpOUIGmYF$E0xBPCaGEaI6ZJtB+pTzl0Fv6fjkr5rWIhVxhishy2s=",
       "years_of_experience": 15,
       "is_staff": true,
       "is_superuser": true
