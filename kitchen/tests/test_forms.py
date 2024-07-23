@@ -27,17 +27,23 @@ class CookCreateFormTests(TestCase):
 
     def test_invalid_years_of_experience(self):
         # Test with years_of_experience > 99
-        form = CookYearUpdateForm(data={**self.valid_data, "years_of_experience": 100})
+        form = CookYearUpdateForm(
+            data={**self.valid_data, "years_of_experience": 100}
+        )
         self.assertFalse(form.is_valid())
         self.assertIn("years_of_experience", form.errors)
 
         # Test with years_of_experience < 0
-        form = CookYearUpdateForm(data={**self.valid_data, "years_of_experience": -1})
+        form = CookYearUpdateForm(
+            data={**self.valid_data, "years_of_experience": -1}
+        )
         self.assertFalse(form.is_valid())
         self.assertIn("years_of_experience", form.errors)
 
     def test_password_mismatch(self):
-        form = CookCreateForm(data={**self.valid_data, "password2": "differentpass"})
+        form = CookCreateForm(
+            data={**self.valid_data, "password2": "differentpass"}
+        )
         self.assertFalse(form.is_valid())
         self.assertIn("password2", form.errors)
 

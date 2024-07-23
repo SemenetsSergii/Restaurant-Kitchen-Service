@@ -154,7 +154,9 @@ class DishDetailView(LoginRequiredMixin, generic.DetailView):
 
     def get_queryset(self):
         return (
-            super().get_queryset().select_related("dish_type").prefetch_related("cooks")
+            super().get_queryset().
+            select_related("dish_type").
+            prefetch_related("cooks")
         )
 
 
@@ -176,7 +178,9 @@ class CookListView(LoginRequiredMixin, generic.ListView):
         form = CookSearchForm(self.request.GET)
 
         if form.is_valid():
-            return queryset.filter(username__icontains=form.cleaned_data["username"])
+            return queryset.filter(
+                username__icontains=form.cleaned_data["username"]
+            )
         return queryset
 
 

@@ -31,7 +31,10 @@ class PrivateDishTypeTest(TestCase):
         response = self.client.get(DISH_TYPE_LIST_URL)
         self.assertEqual(response.status_code, 200)
         dish_types = DishType.objects.all()
-        self.assertEqual(list(response.context["dish-type-list"]), list(dish_types))
+        self.assertEqual(list(
+            response.context["dish-type-list"]),
+            list(dish_types)
+        )
         self.assertTemplateUsed(response, "kitchen/dish_type_list.html")
 
     def test_search_dish_type(self):

@@ -28,8 +28,7 @@ SECRET_KEY = os.environ["DJANGO_SECRET_KEY"]
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = "RENDER" not in os.environ
 
-ALLOWED_HOSTS = ["127.0.0.1",
-                 "localhost",]
+ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
 
 # Application definition
 
@@ -90,7 +89,12 @@ DATABASES = {
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES["default"].update(db_from_env)
 
-DATABASES_URL = ('postgresql://restaurant_owner:DQeVFga8xsf4@ep-young-glitter-a2a2gkuu.eu-central-1.aws.neon.tech/restaurant?sslmode=require')
+DATABASES_URL = (""
+                 "postgresql://restaurant_owner:"
+                 "DQeVFga8xsf4@ep-young-glitter-"
+                 "a2a2gkuu.eu-central-1.aws.neon."
+                 "tech/restaurant?sslmode=require"
+                 )
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -101,13 +105,16 @@ AUTH_PASSWORD_VALIDATORS = [
         "UserAttributeSimilarityValidator",
     },
     {
-        "NAME": "django.contrib.auth.password_validation." "MinimumLengthValidator",
+        "NAME": "django.contrib.auth.password_validation."
+                "MinimumLengthValidator",
     },
     {
-        "NAME": "django.contrib.auth.password_validation." "CommonPasswordValidator",
+        "NAME": "django.contrib.auth.password_validation."
+                "CommonPasswordValidator",
     },
     {
-        "NAME": "django.contrib.auth.password_validation." "NumericPasswordValidator",
+        "NAME": "django.contrib.auth.password_validation."
+                "NumericPasswordValidator",
     },
 ]
 
@@ -144,7 +151,7 @@ AUTH_USER_MODEL = "kitchen.Cook"
 
 LOGIN_REDIRECT_URL = "/"
 
-LOGIN_URL = '/accounts/login/'
+LOGIN_URL = "/accounts/login/"
 
 INTERNAL_IPS = ["127.0.0.1"]
 

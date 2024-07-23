@@ -35,7 +35,10 @@ class Dish(models.Model):
     dish_type = models.ForeignKey(
         DishType, on_delete=models.CASCADE, related_name="dishes"
     )
-    cooks = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="dishes")
+    cooks = models.ManyToManyField(
+        settings.AUTH_USER_MODEL,
+        related_name="dishes"
+    )
 
     class Meta:
         ordering = ["dish_type"]
