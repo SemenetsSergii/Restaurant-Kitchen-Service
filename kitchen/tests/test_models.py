@@ -14,7 +14,7 @@ class ModelTests(TestCase):
             password="userpass123",
             first_name="Ecto",
             last_name="Francolin",
-            years_of_experience=10
+            years_of_experience=10,
         )
 
     def test_dish_type_str(self):

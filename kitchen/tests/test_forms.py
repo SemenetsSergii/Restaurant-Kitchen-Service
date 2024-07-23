@@ -7,11 +7,7 @@ from kitchen.forms import (
     DishSearchForm,
     DishTypeSearchForm,
 )
-from kitchen.models import (
-    Cook,
-    Dish,
-    DishType
-)
+from kitchen.models import Cook, Dish, DishType
 
 
 class CookCreateFormTests(TestCase):
@@ -22,7 +18,7 @@ class CookCreateFormTests(TestCase):
             "password2": "userpass123",
             "first_name": "Yannick ",
             "last_name": "Alleno",
-            "years_of_experience": 25
+            "years_of_experience": 25,
         }
 
     def test_valid_form(self):
@@ -31,37 +27,25 @@ class CookCreateFormTests(TestCase):
 
     def test_invalid_years_of_experience(self):
         # Test with years_of_experience > 99
-        form = CookYearUpdateForm(
-            data={**self.valid_data,
-                  "years_of_experience": 100}
-        )
+        form = CookYearUpdateForm(data={**self.valid_data, "years_of_experience": 100})
         self.assertFalse(form.is_valid())
-        self.assertIn(
-            "years_of_experience",
-            form.errors
-        )
+        self.assertIn("years_of_experience", form.errors)
 
         # Test with years_of_experience < 0
-        form = CookYearUpdateForm(
-            data={**self.valid_data,
-                  "years_of_experience": -1}
-        )
+        form = CookYearUpdateForm(data={**self.valid_data, "years_of_experience": -1})
         self.assertFalse(form.is_valid())
         self.assertIn("years_of_experience", form.errors)
 
     def test_password_mismatch(self):
-        form = CookCreateForm(
-            data={**self.valid_data,
-                  "password2": "differentpass"}
-        )
+        form = CookCreateForm(data={**self.valid_data, "password2": "differentpass"})
         self.assertFalse(form.is_valid())
         self.assertIn("password2", form.errors)
 
     def test_form_initialization(self):
         form = CookCreateForm()
-        self.assertIn('first_name', form.fields)
-        self.assertIn('last_name', form.fields)
-        self.assertIn('years_of_experience', form.fields)
+        self.assertIn("first_name", form.fields)
+        self.assertIn("last_name", form.fields)
+        self.assertIn("years_of_experience", form.fields)
 
 
 class CookSearchFormTests(TestCase):

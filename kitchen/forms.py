@@ -11,7 +11,7 @@ class CookCreateForm(UserCreationForm):
         fields = UserCreationForm.Meta.fields + (
             "first_name",
             "last_name",
-            "years_of_experience"
+            "years_of_experience",
         )
 
     def clean_years_of_experience(self):
@@ -37,9 +37,7 @@ def validation_year_of_experience(years_of_experience: int) -> int:
             "The length of service should not be greater than 99 years"
         )
     elif years_of_experience < 0:
-        raise ValidationError(
-            "The length of service should not be less than 0"
-        )
+        raise ValidationError("The length of service should not be less than 0")
     return years_of_experience
 
 
@@ -48,11 +46,7 @@ class CookSearchForm(forms.Form):
         max_length=255,
         required=False,
         label="",
-        widget=forms.TextInput(
-            attrs={
-                "placeholder": "Search by Cook"
-            }
-        )
+        widget=forms.TextInput(attrs={"placeholder": "Search by Cook"}),
     )
 
 
@@ -61,11 +55,7 @@ class DishSearchForm(forms.Form):
         max_length=255,
         required=False,
         label="",
-        widget=forms.TextInput(
-            attrs={
-                "placeholder": "Search by Dish"
-            }
-        )
+        widget=forms.TextInput(attrs={"placeholder": "Search by Dish"}),
     )
 
 
@@ -74,9 +64,5 @@ class DishTypeSearchForm(forms.Form):
         max_length=255,
         required=False,
         label="",
-        widget=forms.TextInput(
-            attrs={
-                "placeholder": "Search by Dish Type"
-            }
-        )
+        widget=forms.TextInput(attrs={"placeholder": "Search by Dish Type"}),
     )

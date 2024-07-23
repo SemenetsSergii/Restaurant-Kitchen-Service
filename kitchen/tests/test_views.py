@@ -31,10 +31,7 @@ class PrivateDishTypeTest(TestCase):
         response = self.client.get(DISH_TYPE_LIST_URL)
         self.assertEqual(response.status_code, 200)
         dish_types = DishType.objects.all()
-        self.assertEqual(
-            list(response.context["dish-type-list"]),
-            list(dish_types)
-        )
+        self.assertEqual(list(response.context["dish-type-list"]), list(dish_types))
         self.assertTemplateUsed(response, "kitchen/dish_type_list.html")
 
     def test_search_dish_type(self):
@@ -59,22 +56,17 @@ class PrivateCookListViewTest(TestCase):
         )
         self.client.force_login(self.user)
         self.cook1 = get_user_model().objects.create_user(
-            username="Michael",
-            password="password1"
+            username="Michael", password="password1"
         )
         self.cook2 = get_user_model().objects.create_user(
-            username="Kimmi",
-            password="password2"
+            username="Kimmi", password="password2"
         )
 
     def test_retrieve_cooks(self):
         response = self.client.get(COOK_LIST_URL)
         self.assertEqual(response.status_code, 200)
         cooks = get_user_model().objects.all()
-        self.assertEqual(
-            list(response.context["cook-list"]),
-            list(cooks)
-        )
+        self.assertEqual(list(response.context["cook-list"]), list(cooks))
         self.assertTemplateUsed(response, "kitchen/cook_list.html")
 
     def test_search_cook(self):
@@ -103,21 +95,18 @@ class PrivateDishListViewTest(TestCase):
             name="Snakes",
             description="A tasty dish",
             price="10.00",
-            dish_type=self.dish_type
+            dish_type=self.dish_type,
         )
         self.dish2 = Dish.objects.create(
             name="Gold Eagle",
             description="Another tasty dish",
             price="15.00",
-            dish_type=self.dish_type
+            dish_type=self.dish_type,
         )
 
     def test_retrieve_dishes(self):
         response = self.client.get(DISH_LIST_URL)
         self.assertEqual(response.status_code, 200)
         dishes = Dish.objects.all()
-        self.assertEqual(
-            list(response.context["dish-list"]),
-            list(dishes)
-        )
+        self.assertEqual(list(response.context["dish-list"]), list(dishes))
         self.assertTemplateUsed(response, "kitchen/dish_list.html")
