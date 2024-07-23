@@ -1,0 +1,223 @@
+body {
+    margin: 20px;
+    padding: 10px;
+    font-family: "Monotype Corsiva", serif;
+
+}
+
+header {
+    background-image: url('../images/rest1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px 0;
+}
+
+.header2 {
+    font-size: 1em;
+    color: black;
+    font-family: "Monotype Corsiva", serif;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.view {
+    color: black;
+    font-family: "Monotype Corsiva", serif;
+    font-weight: bolder;
+    font-size: calc(1em + 4vw);
+    text-align: center;
+}
+
+.view-about {
+    color: black;
+    font-family: "Monotype Corsiva", serif;
+    font-weight: bolder;
+    font-size: 2em;
+    text-align: center;
+}
+
+.custom-text {
+    color: black;
+    font-family: "Freestyle Script", serif;
+    font-weight: bolder;
+    font-size: calc(1em + 4vw);
+}
+
+ul.nav {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.nav-item {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.nav-link {
+    color: black;
+    font-family: "Freestyle Script", serif;
+    font-size: calc(0.5em + 2vw);
+}
+
+.nav-link:hover {
+    color: #666;
+}
+
+
+.table-dish {
+    width: 90%;
+    margin: 1em;
+    border-collapse: collapse;
+    border-spacing: 2px 5px;
+    line-height: 2.5;
+    font-family: "Monotype Corsiva", serif;
+    font-size: calc(1em + 0.5vw);
+    font-weight: normal;
+    color: black;
+    padding: 12px 2px;
+
+}
+
+.header-menu {
+    color: white;
+    font-family: "Monotype Corsiva", serif;
+    font-weight: bolder;
+    font-size: calc(1em + 4vw);
+    text-align: center;
+}
+
+.tab-bottom-dish {
+    border-top: dashed black;
+
+}
+
+.name-line {
+    font-family: "Monotype Corsiva", serif;
+}
+
+.header-create {
+    margin: 1em;
+    padding: 15px 10px;
+    color: white;
+    font-family: "Monotype Corsiva", serif;
+    font-weight: bolder;
+    font-size: calc(1em + 1vw);
+    text-align: left;
+}
+
+.cook-list {
+    margin: 1em;
+    border-collapse: collapse;
+    border-spacing: 2px 5px;
+    line-height: 2.5;
+    font-family: "Monotype Corsiva", serif;
+    font-size: calc(1em + 0.5vw);
+    font-weight: normal;
+    color: black;
+    padding: 12px 2px;
+    text-align: center;
+}
+
+.table-cook-centre {
+    text-align: center;
+    margin: auto;
+    font-family: "Monotype Corsiva", serif;
+    font-size: 2rem;
+    table-layout: fixed;
+    width: 90%;
+    border-collapse: collapse;
+    border: 0;
+}
+
+.table-dish-type-centre {
+    text-align: center;
+    margin: auto;
+    font-family: "Monotype Corsiva", serif;
+    font-size: 2rem;
+    table-layout: fixed;
+    width: 90%;
+    border-collapse: collapse;
+    border: 0;
+}
+
+.table-dish-centre {
+    text-align: center;
+    margin: auto;
+    font-family: "Monotype Corsiva", serif;
+    font-size: 2rem;
+    table-layout: fixed;
+    width: 90%;
+    border-collapse: collapse;
+    border: 0;
+}
+
+
+.search-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.search-form-container form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.search-form-container input[type="submit"] {
+    margin-left: 10px;
+}
+
+.pagination {
+    display: flex; /* Use flexbox to align items */
+    justify-content: center; /* Center the pagination items */
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove padding */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.page-item {
+    margin: 0 5px; /* Add some space between pagination items */
+}
+
+.page-link {
+    text-decoration: none; /* Remove underline from links */
+    padding: 8px 12px; /* Add padding to links */
+    border: 1px solid #0c7cd1; /* Add border */
+    color: #007bff; /* Set link color */
+    border-radius: 4px; /* Add rounded corners */
+}
+
+.page-item.active .page-link {
+    background-color: #007bff; /* Active page color */
+    color: white; /* Text color for active page */
+}
+
+.page-link:hover {
+    background-color: #e9ecef; /* Hover effect */
+}
+
+.footer {
+    margin-left: auto;
+    margin-right: auto;
+   color: white;
+}
+
+.cook-link {
+    font-size: 1.9rem;
+    color: #238fe8;
+}
+
+.btn-primary {
+    color: #000000;
+    background-color: #ecc70f;
+    border-color: #0280e6;
+    font-size: 25px;
+}
