@@ -122,7 +122,6 @@ ul.nav {
 }
 
 .table-cook-centre {
-    width: 10%;
     text-align: center;
     margin: auto;
     font-family: "Monotype Corsiva", serif;
@@ -130,11 +129,10 @@ ul.nav {
     table-layout: fixed;
     width: 90%;
     border-collapse: collapse;
-    border: 0px;
+    border: 0;
 }
 
 .table-dish-type-centre {
-    width: 10%;
     text-align: center;
     margin: auto;
     font-family: "Monotype Corsiva", serif;
@@ -142,11 +140,10 @@ ul.nav {
     table-layout: fixed;
     width: 90%;
     border-collapse: collapse;
-    border: 0px;
+    border: 0;
 }
 
 .table-dish-centre {
-    width: 10%;
     text-align: center;
     margin: auto;
     font-family: "Monotype Corsiva", serif;
@@ -154,12 +151,11 @@ ul.nav {
     table-layout: fixed;
     width: 90%;
     border-collapse: collapse;
-    border: 0px;
+    border: 0;
 }
 
 
 .search-form-container {
-    margin: ;
     display: flex;
     justify-content: center;
     align-items: center;
