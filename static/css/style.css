@@ -54,16 +54,20 @@ ul.nav {
 .nav-item {
     display: inline-block;
     margin-right: 10px;
+
 }
 
 .nav-link {
     color: black;
     font-family: "Freestyle Script", serif;
     font-size: calc(0.5em + 2vw);
+
 }
 
 .nav-link:hover {
-    color: #666;
+    color: black;
+    font-size: 3rem;
+    font-weight: 800;
 }
 
 
@@ -207,7 +211,7 @@ ul.nav {
 .footer {
     margin-left: auto;
     margin-right: auto;
-   color: white;
+    color: white;
 }
 
 .cook-link {
