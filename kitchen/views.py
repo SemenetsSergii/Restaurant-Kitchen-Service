@@ -3,7 +3,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpRequest, HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.views import generic
-from django.urls import reverse, reverse_lazy
+from django.urls import reverse_lazy
 from django.core.exceptions import PermissionDenied
 
 from .models import Cook, Dish, DishType
@@ -169,14 +169,12 @@ class CookListView(LoginRequiredMixin, generic.ListView):
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(CookListView, self).get_context_data(**kwargs)
         username = self.request.GET.get("username", "")
-
         context["search_form"] = CookSearchForm(initial={"username": username})
         return context
 
     def get_queryset(self):
         queryset = Cook.objects.all()
         form = CookSearchForm(self.request.GET)
-
         if form.is_valid():
             return queryset.filter(
                 username__icontains=form.cleaned_data["username"]

@@ -2,7 +2,6 @@
 {% load crispy_forms_filters %}
 
 {% block content %}
-  <div class="view">
   <h1 class="header2">Menu</h1>
   <div class="search-form-container">
     <form method="get" action="" class="form-inline">
@@ -17,7 +16,7 @@
   {% endif %}
 
   {% if dish_list %}
-    <table class="table-dish-centre">
+    <table class="table-centre">
       <tr>
         {% if user.is_staff %}
           <th>id</th>
@@ -55,5 +54,4 @@
       {% endfor %}
     </table>
   {% endif %}
-  </div>
 {% endblock %}

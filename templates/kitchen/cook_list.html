@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% load crispy_forms_filters %}
 {% block content %}
-<div class="view">
   <h1 class="header2">Staff Cooks</h1>
       <div class="search-form-container">
     <form method="get" action="" class="form-inline">
@@ -14,7 +13,7 @@
         Create</a>
       </h2>
     {% endif %}
-  <div class="table-cook-centre">
+  <div class="table-centre">
   {% if cook_list %}
     <ul>
       {% for cook in cook_list %}
@@ -29,5 +28,4 @@
     <p>No staff cooks available.</p>
   {% endif %}
   </div>
-</div>
 {% endblock %}

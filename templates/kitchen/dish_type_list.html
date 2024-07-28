@@ -2,7 +2,7 @@
 {% load crispy_forms_filters %}
 
 {% block content %}
-  <div class="view">
+
   <h1 class="header2">Dish Type List</h1>
     <div class="search-form-container">
     <form method="get" action="" class="form-inline">
@@ -15,7 +15,7 @@
                                  class="btn btn-primary link-to-page">Create</a></h2>
   {% endif %}
   {% if dish_type_list %}
-    <table class="table-dish-type-centre">
+    <table class="table-centre">
       <tr>
         {% if user.is_staff %}
           <th>id</th>
@@ -46,7 +46,7 @@
           {% endif %}
         </tr>
       {% endfor %}
-      </div>
+
     </table>
   {% else %}
     <p>No dish types available.</p>
