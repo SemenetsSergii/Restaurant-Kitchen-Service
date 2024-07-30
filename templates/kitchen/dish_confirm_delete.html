@@ -2,7 +2,7 @@
 {% block content %}
   <h1>Delete Dish</h1>
   <p> Are you sure want to delete this Dish: {{ dish }}?</p>
-  <form action="{% url 'kitchen:cook-delete' pk=cook.pk %}" method="post">
+  <form action="" method="post">
     {% csrf_token %}
     <input type="submit" value="Delete" class="btn btn-danger">
   </form>
