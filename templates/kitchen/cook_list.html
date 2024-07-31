@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
+{% block content %}
+  <h1 class="header2">Staff Cooks</h1>
+      <div class="search-form-container">
+    <form method="get" action="" class="form-inline">
+      {{ search_form|crispy }}
+      <input type="submit" class="btn btn-secondary" value="🔍">
+    </form>
+  </div>
+    {% if user.is_superuser %}
+      <h2>Create new Cook: <a href="{% url 'kitchen:cook-create' %}" class="btn btn-primary link-to-page">
+        Create</a>
+      </h2>
+    {% endif %}
+  <div class="table-centre">
+  {% if cook_list %}
+    <ul>
+      {% for cook in cook_list %}
+        <p>
+          <a class="cook-link" href="{{ cook.get_absolute_url }}">{{ cook.first_name }} {{ cook.last_name }}
+            {% if user == cook.user %} (Me) {% endif %}
+          </a>
+        </p>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No staff cooks available.</p>
+  {% endif %}
+  </div>
+{% endblock %}

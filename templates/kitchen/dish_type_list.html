@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
+
+{% block content %}
+
+  <h1 class="header2">Dish Type List</h1>
+    <div class="search-form-container">
+    <form method="get" action="" class="form-inline">
+      {{ search_form|crispy }}
+      <input type="submit" class="btn btn-secondary" value="🔍">
+    </form>
+  </div>
+  {% if user.is_staff %}
+    <h2>Create new Dish Type: <a href="{% url 'kitchen:dish-type-create' %}"
+                                 class="btn btn-primary link-to-page">Create</a></h2>
+  {% endif %}
+  {% if dish_type_list %}
+    <table class="table-centre">
+      <tr>
+        {% if user.is_staff %}
+          <th>id</th>
+        {% endif %}
+        {% if user.is_staff %}
+          <th>Name</th>
+        {% endif %}
+        {% if user.is_staff %}
+          <th>Update</th>
+        {% endif %}
+        {% if user.is_staff %}
+          <th>Delete</th>
+        {% endif %}
+      </tr>
+      {% for dish_type in dish_type_list %}
+        <tr class="tab-bottom">
+          {% if user.is_staff %}
+            <td>{{ dish_type.id }}</td>
+          {% endif %}
+          <td><a href="{% url "kitchen:dish-type-detail" pk=dish_type.id %}">{{ dish_type.name }}</a>
+
+          </td>
+          {% if user.is_staff %}
+            <td><a href="{% url 'kitchen:dish-type-update' pk=dish_type.id %}">Update</a></td>
+          {% endif %}
+          {% if user.is_staff %}
+            <td><a style="color: red" href="{% url 'kitchen:dish-type-delete' pk=dish_type.id %}">Delete</a></td>
+          {% endif %}
+        </tr>
+      {% endfor %}
+
+    </table>
+  {% else %}
+    <p>No dish types available.</p>
+  {% endif %}
+  </div>
+{% endblock %}

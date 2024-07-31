@@ -1,0 +1,99 @@
+body {
+    margin: 20px;
+    padding: 10px;
+    font-family: "Monotype Corsiva", serif;
+}
+
+header {
+    background-image: url('../images/rest1.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px 0;
+}
+
+.header2, .view, .nav-link {
+    font-family: "Monotype Corsiva", serif;
+    font-weight: bolder;
+    color: black;
+    text-align: center;
+    font-size: 2.5vw;
+}
+
+.view, .custom-text {
+    font-size: 5vw;
+}
+
+.view-about, .header-create {
+    font-size: 7em;
+}
+
+.nav-link {
+    font-family: "Freestyle Script", serif;
+    font-size: calc(1em + 2vw);
+}
+
+.nav-link:hover {
+    font-size: 5rem;
+    font-weight: 100;
+}
+
+.nav-item {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.table-centre {
+    font-family: "Monotype Corsiva", serif;
+    font-size: 1vw;
+    border-collapse: collapse;
+    text-align: center;
+    margin: auto;
+    width: 90%;
+}
+
+.search-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-form-container form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: auto;
+}
+
+.search-form-container input[type="submit"] {
+    margin-left: 10px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    margin: auto;
+}
+
+.page-item {
+    margin: 0 5px;
+}
+
+.page-link {
+    text-decoration: none;
+    padding: 8px 12px;
+    border: 1px solid #0c7cd1;
+    color: #007bff;
+    border-radius: 4px;
+}
+
+.page-item.active .page-link {
+    background-color: #007bff;
+    color: white;
+}
+
+.page-link:hover {
+    background-color: #e9ecef;
+}
